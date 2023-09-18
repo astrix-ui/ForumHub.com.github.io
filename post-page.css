@@ -1,0 +1,503 @@
+/* VARS */
+
+:root {
+    --primary: black;
+    --primary-blue: rgb(11, 0, 39);
+    --secondary: rgb(30, 30, 30);
+    --secondary-gold: rgb(66, 58, 0);
+}
+
+
+
+
+/* BASE STYLES */
+
+body {
+    word-wrap: break-word;
+    box-sizing: border-box;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+    color: white;
+    background: linear-gradient(rgb(11, 0, 39), rgb(66, 58, 0), black);
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+li {
+    list-style: none;
+}
+
+
+
+/* MAIN  */
+.navbar a:hover {
+    color: red;
+    text-shadow: 0px 0px 10px white;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-gap: 10px;
+}
+
+#logo {
+    padding: 0px 0px;
+    grid-column: 1/9;
+    text-align: center;
+}
+
+.navbar {
+    background-color: black;
+    color: aliceblue;
+    box-shadow: 0px 0px 10px black;
+}
+
+.navbar ul {
+    display: none;
+    justify-content: flex-end;
+    grid-column: 6/9;
+    padding: 0px 70px;
+    align-self: center;
+}
+
+.navbar li {
+    padding: 0px 10px;
+}
+
+.welcome {
+    margin-top: 10px;
+}
+
+.welcome::before {
+    content: "";
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    background: url(assets/2newbg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 20px;
+
+    background-size: cover;
+    z-index: -1;
+}
+
+.welcome h1 {
+    font-size: 6em;
+    text-align: center;
+}
+
+.posts {
+    margin-top: 100px;
+}
+
+.post-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: black;
+    margin: 20px;
+    border-radius: 20px;
+    flex-direction: row;
+}
+
+.post-container textarea {
+    background-color: rgba(240, 248, 255, 0.226);
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    border-radius: 10px;
+    resize: unset;
+    max-width: 100%;
+    max-width: 300px;
+    padding: 12px 20px;
+    margin: 10px;
+    box-sizing: border-box;
+}
+
+.box img {
+    margin-top: 20px;
+    border-radius: 20px;
+    max-width: 300px;
+    width: 80%;
+    box-shadow: 0px 0px 10px white;
+}
+
+.box-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.box {
+    text-align: center;
+    align-items: center;
+    margin: 40px;
+    border: 1px solid var(--secondary);
+    border-radius: 20px;
+    max-width: 300px;
+    width: 20%;
+    flex-grow: 1;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.46);
+}
+
+.box h4 {
+    padding: 5px 20px;
+}
+
+#enter-post {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    margin-bottom: 10px;
+}
+
+#enter-post label,
+input,
+button {
+    margin: 10px;
+}
+
+#enter-post input {
+    padding: 5px 15px;
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+}
+
+#enter-post button {
+    padding: 5px 15px;
+    border: none;
+    border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
+
+    border: 2px solid white;
+    background-color: black;
+    color: aliceblue;
+    transition: 0.3s ease-in-out;
+}
+
+#enter-post button:hover {
+    background-color: white;
+    color: black;
+}
+
+footer {
+    text-align: center;
+    background-color: var(--secondary);
+    padding: 10px;
+    margin: 10px 10px 0px 10px;
+    border-radius: 20px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    letter-spacing: 2px;
+}
+
+footer h4 {
+    font-size: 0.8em;
+}
+
+#back-btn {
+    position: absolute;
+    top: 80px;
+    left: 10px;
+    background-color: rgba(255, 196, 0, 0.636);
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: 0.3s ease-in-out;
+}
+
+#back-btn:hover {
+    background-color: var(--primary-blue);
+    box-shadow: 0px 0px 20px white;
+}
+
+.search {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-radius: 60px;
+    transition: 0.5s;
+    margin: auto;
+    box-shadow: 0 0 0 5px #00000058;
+    overflow: hidden;
+}
+
+.search .icon {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 60px;
+    height: 60px;
+    background: rgb(255, 255, 255);
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.search .input {
+    position: relative;
+    width: 300px;
+    height: 58px;
+    left: 60px;
+    top: -10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search .input input {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    border: none;
+    height: 100%;
+    outline: none;
+    font-size: 18px;
+}
+
+.search .icon::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 3px solid #493f03c9;
+    border-radius: 50%;
+    transform: translate(-4px, -4px);
+
+}
+
+.search .icon::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 12px;
+    background: #493f03c9;
+    border-radius: 50%;
+    transform: translate(6px, 6px) rotate(315deg);
+}
+
+.search.active {
+    width: 360px;
+}
+
+.clear {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    right: 15px;
+    cursor: pointer;
+    align-items: center;
+}
+
+.clear::before {
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 15px;
+    background: #9999;
+    transform: rotate(45deg);
+}
+
+.clear::after {
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 15px;
+    background: #9999;
+    transform: rotate(315deg);
+}
+
+@media screen and (min-width: 1000px) {
+    textarea {
+        font-size: 1.4em;
+        color: aliceblue;
+    }
+
+    .posts {
+        margin-top: 150px;
+    }
+
+    #back-btn {
+        top: 100px;
+        left: 20px;
+    }
+
+    .navbar {
+        position: fixed;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+    }
+
+    #logo {
+        grid-column: 1/4;
+        padding: 10px 40px;
+        transform: translateX(-100px);
+
+    }
+
+    .navbar ul {
+        display: flex;
+    }
+
+    .welcome {
+        margin: 200px;
+        align-items: center;
+    }
+
+    .box {
+        width: 1200px;
+    }
+
+    .post-container {
+        margin-top: -80px;
+        background: radial-gradient(black, rgba(0, 0, 0, 0.396));
+    }
+
+}
+
+@media screen and (min-width: 300px) and (max-width: 600px) {
+
+    .box-container {
+        flex-direction: column;
+    }
+
+    .box {
+        width: 80%;
+    }
+
+    footer h4 {
+        font-size: 0.8em;
+        letter-spacing: 0px;
+    }
+    .search {
+        width: 30px;
+        height: 30px;
+
+    }
+
+    .search .icon {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 32px;
+        height: 30px;
+
+    }
+
+    .search .input {
+        width: 300px;
+        height: 58px;
+        left: 60px;
+        top: -10px;
+
+    }
+
+    .search .input input {
+        top: -15px;
+
+    }
+
+    .search.active {
+        width: 260px;
+    }
+
+    #back-btn {
+        top: 80px;
+        font-size: 1em;
+        padding: 5px 7px;
+    }
+    .welcome h1{
+        font-size: 2.5em;
+        margin-top: 60px;
+    }
+    footer h4{
+        font-size: 0.7em;
+        letter-spacing: 0px;
+    }
+
+}
+
+@media screen and (max-width: 299px) {
+    footer h4 {
+        font-size: 0.6em;
+        letter-spacing: 0px;
+    }
+    .box{
+        margin: 10px 40px;
+    }
+
+    #back-btn {
+        top: 50px;
+        font-size: 0.7em;
+        padding: 5px 7px;
+    }
+
+    #logo {
+        font-size: 1em;
+    }
+
+    .welcome h1 {
+        font-size: 2.5em;
+        margin-top: 35px;
+    }
+
+    .search {
+        width: 30px;
+        height: 30px;
+
+    }
+
+    .search .icon {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 32px;
+        height: 30px;
+
+    }
+
+    .search .input {
+        width: 300px;
+        height: 58px;
+        left: 60px;
+        top: -10px;
+
+    }
+
+    .search .input input {
+        top: -15px;
+
+    }
+
+    .search.active {
+        width: 260px;
+    }
+
+
+
+
+}

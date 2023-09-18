@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum Page</title>
+    <link rel="stylesheet" href="forum.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <nav class="navbar grid">
+        <h1 id="logo">ForumHub.com</h1>
+        <ul>
+            <li><a href="post-page.html">Posts</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <!-- <li><a href="login.html" class="login-btn">Login</a></li> -->
+            <li><a href="profile.html"><span id="usernameContainer"></span></a></li>
+            <li id="loginContainer"><a href="login.html" class="login-btn">Login</a></li>
+            <li>
+                <div class="icon" onclick="toggleNotifi()">
+                    <img src="assets/notification.png" alt="">
+                    <span>17</span>
+                </div>
+                <div class="notifi-box" id="notify-box">
+                    <h2>Notification: 
+                        <span>17</span>
+                    </h2>
+                    <div class="notifi-item">
+                        <img src="assets/profile.png" alt="">
+                        <div class="text">
+                            <h4>username</h4>
+                            <p>@Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+                
+
+                    <div class="notifi-item">
+                        <img src="assets/profile.png" alt="">
+                        <div class="text">
+                            <h4>username</h4>
+                            <p>@Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+
+                    <div class="notifi-item">
+                        <img src="assets/profile.png" alt="">
+                        <div class="text">
+                            <h4>username</h4>
+                            <p>@Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+
+                    <div class="notifi-item">
+                        <img src="assets/profile.png" alt="">
+                         <div class="text">
+                            <h4>username</h4>
+                            <p>@Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+    </nav>
+
+    <section class="welcome grid">
+        <h2>Welcome To <br>ForumHub.com</h2>
+    </section>
+    
+    <section class="stats">
+        <h3>Statistics Of Our Page</h3>
+
+        <div class="stat-box ">
+            <div class="pin">
+                <img src="assets/pin.png" alt="pin icon">
+                <h4>Posts</h4>
+                <p class="count">18</p>
+            </div>
+            <div class="announce">    
+                <img src="assets/profile-stat.png" alt="pin icon">
+                <h4>Users</h4>
+                <p class="count">11228</p>
+            </div>
+            <div class="convo">
+                <img src="assets/convo.png" alt="convo icon">
+                <h4>Replies</h4>
+                <p class="count">3400</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="posts">
+        <h3>Explore Posts</h3>
+
+        <div class="post-grid">
+            <div class="post-box">
+                <img src="assets/profile.png" alt="">
+                <h4>Discover what Koalas eat!</h4>
+            </div>
+            <div class="post-box">
+                <img src="assets/profile.png" alt="">
+                <h4>Shah Rukh Khan sells rights to his latest film for record breaking money!</h4>
+            </div>
+            <div class="post-box">
+                <img src="assets/profile.png" alt="">
+                <h4>New corona-virus variant found in China. Scientists call it Covid-Infinity</h4>
+            </div>
+        </div>
+
+        <div class="posts-btn">
+            <a href="post-page.html" id="postbtn">Explore more</a>
+        </div>
+    </section>
+
+    <section class="join">
+        <div class="grad">
+            <h2>Join our Forum</h2>
+            <p class="leading">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus nulla, blanditiis optio adipisci debitis enim ipsa. Earum illo, excepturi dignissimos debitis laborum dolor eligendi modi magni incidunt sunt nihil voluptatibus corporis commodi non possimus? Enim cumque tenetur consectetur fuga est, molestiae in quod odio recusandae assumenda iusto corporis. Maxime ab ipsam, qui in omnis doloribus consequuntur fugit aliquid sunt. Eius sed ex nesciunt aliquid architecto sit iste illo eaque odit.</p>
+            <div class="join-btn">
+                <a href="login.html" id="btn">Login</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="news-cont grid">
+        <div class="newsletter">
+            <h2>Newsletter</h2>
+            <p class="news-lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat a ipsam architecto deserunt veritatis, in, eaque fugit, quia nisi facilis beatae debitis excepturi doloribus eligendi iste! Nihil doloremque illo ipsum! Tenetur voluptates, facere soluta eveniet, blanditiis, consequatur tempore fuga magni aspernatur perspiciatis reprehenderit nihil! Aspernatur, minima. Sapiente, distinctio facere culpa ducimus optio id consectetur cum tempore. Sapiente numquam enim repudiandae et. Consectetur fugiat itaque qui mollitia, molestiae nihil corrupti id ducimus nobis facere corporis aliquam. Provident consequuntur, repellat sunt perferendis perspiciatis accusamus. Excepturi similique consectetur amet fuga repellendus corporis quia totam tempore veritatis doloribus, ratione nihil labore ad, temporibus facilis.</p>
+            <form action="" id="news-form">
+                <input type="email" id="news-box" placeholder="email address">
+                <br>
+                <input type="submit" id="sub">
+            </form>
+        </div>
+
+        <div class="contact-us grid" id="contact">
+            <div class="socials grid">
+
+                <a href=""><h3>Email</h3></a>
+                <a href=""><h3>Instagram</h3></a>
+                <a href=""><h3>Threads</h3></a>
+                <a href=""><h3>Twitter</h3></a>
+                <a href=""><h3>YouTube</h3></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h4>Copyright 2023 Ayush Sharma & Aditya Dev Chand</h4>
+    </footer>
+    <script>
+         var username = localStorage.getItem('username');
+
+// Retrieve the username from localStorage
+var username = localStorage.getItem('username');
+
+// Update the usernameContainer with the username
+var usernameContainer = document.getElementById('usernameContainer');
+var loginContainer = document.getElementById('loginContainer');
+
+if (username) {
+    usernameContainer.textContent = username;
+    usernameContainer.classList.add('login-btn');
+    usernameContainer.setAttribute('href', 'profile.html');
+    loginContainer.style.display = 'none';
+} else {
+    usernameContainer.innerHTML = '<a href="login.html" class="login-btn">Login</a>';
+}
+
+// NOTIFICATION PANEL 
+
+var box = document.getElementById('notify-box');
+var down = false;
+
+function toggleNotifi(){
+    if (down){
+        box.style.height = '0px';
+        box.style.opacity =0;
+        down = false;
+    }
+    else{
+        box.style.height = '510px'
+        box.style.opacity = 1;
+        down = true;
+    }
+}
+
+    </script>
+</body>
+</html>

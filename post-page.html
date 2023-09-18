@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Posts | ForumHub</title>
+    <link rel="stylesheet" href="post-page.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <nav class="navbar grid">
+        <h1 id="logo">ForumHub.com</h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="profile.html"><span id="usernameContainer"></span></a></li>
+            <li id="loginContainer"><a href="login.html" class="login-btn">Login</a></li>
+        </ul>
+    </nav>
+    <section class="goback">
+        <a href="index.html" id="back-btn">&lt; Go Back</a>
+    </section>
+    <section class="welcome">
+        <h1>Explore Posts</h1>
+    </section>
+    <section class="search">
+       <div class="icon"></div>
+       <div class="input">
+        <input type="text" placeholder="Search" id="Mysearch">
+       </div>
+       <span class="clear" onclick="document.getElementById('Mysearch').value = ''"></span>
+    </section>
+
+    <section class="posts">
+        <div class="post-container grid">
+            <div class="forScript">
+                <form id="enter-post">
+                    <label for="textinput   ">Create Post:</label>
+                    <textarea id="textinput" required placeholder="Enter Text" onkeyup="textAreaAdjust(this)" style="overflow:hidden"></textarea>
+                    <textarea id="textinput" required placeholder="Enter Description" onkeyup="textAreaAdjust(this)" style="overflow:hidden"></textarea>
+
+                    <button type="submit">Submit</button>
+                </form>
+                <br>
+            </div>
+                <div class="box-container">
+
+                    <div class="box">
+                      <a href="post-click.html">
+                          <img src="assets/profile.png" alt="">
+                          <h4>Discover what Koalas eat!</h4>
+                        </a>
+                    </div>
+                    <div class="box">
+                       <a href="">
+                           <img src="assets/profile.png" alt="">
+                           <h4>Shah Rukh Khan sells rights to his latest film for record breaking money!</h4>
+                        </a>
+                    </div>
+                    <div class="box">
+                       <a href="">
+                           <img src="assets/profile.png" alt="">
+                           <h4>New corona-virus variant found in China. Scientists call it Covid-Infinity</h4>
+                        </a>
+                    </div>
+                </div>
+            
+        </div>
+    </section>
+
+    <footer>
+        <h4>Copyright 2023 Ayush Sharma & Aditya Dev Chand</h4>
+    </footer>
+
+</body>
+<script>
+// Get the form element and the post container
+const form = document.getElementById('enter-post');
+const postContainer = document.querySelector('.post-container');
+
+// Add an event listener to the form submission
+form.addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form submission
+
+  // Get the text input value
+  const userInput = document.getElementById('textinput').value;
+
+  // Create a new row container
+  const newRow = document.createElement('div');
+  newRow.classList.add('row');
+
+  // Create a new box element
+  const newBox = document.createElement('div');
+  newBox.classList.add('box');
+
+  // Create an image element
+  const image = document.createElement('img');
+  image.src = 'assets/profile.png';
+  image.alt = '';
+
+  // Create a heading element
+  const heading = document.createElement('h4');
+  heading.textContent = userInput;
+
+  // Append the image and heading elements to the new box
+  newBox.appendChild(image);
+  newBox.appendChild(heading);
+
+  // Append the new box to the new row
+  newRow.appendChild(newBox);
+
+  // Append the new row to the post container
+  postContainer.appendChild(newRow);
+
+  // Clear the input value
+  document.getElementById('textinput').value = '';
+});
+var username = localStorage.getItem('username');
+
+// Retrieve the username from localStorage
+var username = localStorage.getItem('username');
+
+// Update the usernameContainer with the username
+var usernameContainer = document.getElementById('usernameContainer');
+var loginContainer = document.getElementById('loginContainer');
+
+if (username) {
+    usernameContainer.textContent = username;
+    usernameContainer.classList.add('login-btn');
+    usernameContainer.setAttribute('href', 'profile.html');
+    loginContainer.style.display = 'none';
+} else {
+    usernameContainer.innerHTML = '<a href="login.html" class="login-btn">Login</a>';
+}
+
+
+
+
+
+
+// RESIZE TEXT AREA --DO NOT DELETE--
+function textAreaAdjust(element) {
+  element.style.height = "1px";
+  element.style.height = (25+element.scrollHeight)+"px";
+}
+
+// SEARCH BAR CLEARING SCRIPT DO NOT DELETE 
+const icon = document.querySelector('.icon');
+const search = document.querySelector('.search');
+icon.onclick = function(){
+    search.classList.toggle('active')
+}
+</script>
+</html>

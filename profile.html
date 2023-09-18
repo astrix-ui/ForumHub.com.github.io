@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="profile.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div id="toast" class="toast">Hogya bhai tu login</div>
+
+    <nav class="navbar grid">
+        <h1 id="logo">ForumHub.com</h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="post-page.html">Posts</a></li>
+            <li><span id="usernameContainer"></span></li>
+            <li id="loginContainer" style="display: none;"><a href="login.html" class="login-btn">Login</a></li>
+            <li id="logoutContainer" style="display: none;"><button  id="logoutButton" class="login-btn">Logout</button></li>
+        </ul>
+    </nav>
+<div class="whole-container">
+
+    <div id="logout-message"></div>
+    
+    
+    <section class="container">
+        <div class="welcome">
+            <h1>Welcome to your profile</h1>
+        </div>
+        <div class="box">
+            <img src="assets/profile.png" alt="">
+            <p id="username"></p>
+        </div>
+    </section>
+    
+    <section class="my-posts">
+        <div class="box-container">
+            <h2>My Posts</h2>
+            <div class="post-box">
+              <a href="post-click.html">
+                  <img src="assets/profile.png" alt="">
+                  <h4>Discover what Koalas eat!</h4>
+                </a>
+            </div>
+            <div class="post-box">
+               <a href="">
+                   <img src="assets/profile.png" alt="">
+                   <h4>Shah Rukh Khan sells rights to his latest film for record breaking money!</h4>
+                </a>
+            </div>
+            <div class="post-box">
+               <a href="">
+                   <img src="assets/profile.png" alt="">
+                   <h4>New corona-virus variant found in China. Scientists call it Covid-Infinity</h4>
+                </a>
+            </div>
+            
+    </section>
+
+    <footer>
+        <h4>Copyright 2023 Ayush Sharma & Aditya Dev Chand</h4>
+    </footer>
+</div>
+    <script>
+        // Retrieve the username from localStorage
+        var username = localStorage.getItem('username');
+
+        // Display the username in the profile page
+        document.getElementById('username').textContent = 'Username: ' + username;
+        
+// Retrieve the username from localStorage
+var username = localStorage.getItem('username');
+
+// Update the username in the profile section
+var usernameElement = document.getElementById('username');
+if (username) {
+    usernameElement.textContent = username;
+} else {
+    usernameElement.textContent = 'Guest';
+}
+
+// Show/hide the login/logout buttons in the navigation bar
+var usernameContainer = document.getElementById('usernameContainer');
+var loginContainer = document.getElementById('loginContainer');
+var logoutContainer = document.getElementById('logoutContainer');
+
+if (username) {
+    usernameContainer.textContent = username;
+    logoutContainer.style.display = 'block';
+} else {
+    usernameContainer.innerHTML = '<a href="login.html" class="login-btn">Login</a>';
+    loginContainer.style.display = 'block';
+}
+
+
+// LOGOUT MESSAGE DO NOT REMOVE 
+
+// Add event listener to the logout button
+var logoutButton = document.getElementById('logoutButton');
+logoutButton.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    // Clear the username from localStorage
+    localStorage.removeItem('username');
+
+    // Set the logout message
+    var logoutMessage = document.getElementById('logout-message');
+    logoutMessage.textContent = 'You have been logged out.';
+
+    // Show the logout message
+    logoutMessage.style.display = 'block';
+
+    // Redirect to the login page after 2 seconds
+    setTimeout(function() {
+        window.location.href = 'login.html';
+    }, 2000);
+});
+
+// TOAST MESSAGE 
+var isLoggedIn = true; // Change this to your actual login logic
+
+if (isLoggedIn) {
+  // Show the toast message
+  var toast = document.getElementById('toast');
+  toast.textContent = 'You are logged in';
+  toast.style.backgroundColor = '#28a745'; // Green color for success
+  toast.style.display = 'block';
+
+  // Hide the toast message after 2 seconds (2000 milliseconds)
+  setTimeout(function () {
+    toast.style.display = 'none';
+  }, 2000);
+}
+
+
+
+    </script>
+</body>
+</html>

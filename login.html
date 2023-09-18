@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <nav class="navbar grid">
+        <h1 id="logo">ForumHub.com</h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="post-page.html">Posts</a></li>
+        </ul>
+    </nav>
+<div class="whole-container">
+
+    <div id="login-status"></div>
+    
+    <section class="goback">
+        <a href="index.html" id="back-btn">&lt; Go Back</a>
+    </section>
+    
+    <div class="container">
+        <h1>Login</h1>
+        <form id="login-form">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p class="create-account">Don't have an account? <a href="#" id="create-account-link">Create one</a></p>
+        <a href="profile.html" id="profile-btn">Profile</a>
+    </div>
+    <script src="script.js"></script>
+</div>
+</body>
+<script>
+    
+    // Get the login form, create account link, and container elements
+const loginForm = document.getElementById('login-form');
+const createAccountLink = document.getElementById('create-account-link');
+const container = document.querySelector('.container');
+
+// Add event listener to the create account link
+createAccountLink.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    // Update the form HTML
+    container.innerHTML = `
+        <h1>Create Account</h1>
+        <form id="create-account-form">
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+            <button type="submit">Create Account</button>
+        </form>
+        <p class="create-account">Already have an account? <a href="#" id="login-link">Login</a></p>
+    `;
+
+    // Get the create account form and login link elements
+    const createAccountForm = document.getElementById('create-account-form');
+    const loginLink = document.getElementById('login-link');
+
+    // Add event listener to the login link
+    loginLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        // Revert back to the login form
+        container.innerHTML = `
+            <h1>Login</h1>
+            <form id="login-form">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p class="create-account">Don't have an account? <a href="#" id="create-account-link">Create one</a></p>
+        `;
+
+        // Attach the event listeners again
+        attachLoginListeners();
+    });
+
+    // Add event listener to the create account form submission
+    createAccountForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const email = document.getElementById('email').value;
+        const name = document.getElementById('name').value;
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirm-password').value;
+
+        // Validate password confirmation
+        if (password !== confirmPassword) {
+            alert("Passwords don't match");
+            return;
+        }
+
+        // Replace with your create account logic
+        alert('Account created successfully');
+    });
+});
+
+// Function to attach the event listeners to the login form and create account link
+function attachLoginListeners() {
+    // Add event listener to the login form submission
+    loginForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        // Replace with your login logic
+        if (username === 'admin' && password === 'password') {
+            alert('Login successful'); // Replace with your logic for successful login
+        } else {
+            alert('Invalid username or password'); // Replace with your logic for failed login
+        }
+    });
+
+    // Add event listener to the create account link
+    createAccountLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        alert('Redirect to create account page'); // Replace with your logic to navigate to the create account page
+    });
+}
+
+// Attach the initial event listeners
+attachLoginListeners();
+document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Get the entered username
+            var username = document.getElementById('username').value;
+
+            // Save the username in localStorage
+            localStorage.setItem('username', username);
+
+            // Redirect to the profile page
+            window.location.href = 'profile.html';
+        });
+    // Add event listener to the login form submission
+loginForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    // Replace with your login logic
+    if (username === 'admin' && password === 'password') {
+        alert('Login successful');
+        // Save the username in localStorage
+        localStorage.setItem('username', username);
+        // Redirect to the profile page
+        window.location.href = 'profile.html';
+    } else {
+        alert('Invalid username or password');
+    }
+});
+
+// Function to handle the login form submission
+function handleLoginFormSubmission(event) {
+    event.preventDefault();
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // Replace with your login logic
+    if (username === 'admin' && password === 'password') {
+        alert('Login successful'); // Replace with your logic for successful login
+
+        // Clear the previous username from localStorage
+        localStorage.removeItem('username');
+
+        // Save the new username in localStorage
+        localStorage.setItem('username', username);
+
+        // Redirect to the profile page
+        window.location.href = 'profile.html';
+    } else {
+        alert('Invalid username or password'); // Replace with your logic for failed login
+    }
+}
+
+// Attach the event listener to the login form
+loginForm.addEventListener('submit', handleLoginFormSubmission);
+
+
+// LOGIN MESSAGE DO NOT REMOVE
+
+// Function to handle the login form submission
+function handleLoginFormSubmission(event) {
+    event.preventDefault();
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // Replace with your login logic
+    if (username === 'admin' && password === 'password') {
+        alert('Login successful'); // Replace with your logic for successful login
+
+        // Clear the previous username from localStorage
+        localStorage.removeItem('username');
+
+        // Save the new username in localStorage
+        localStorage.setItem('username', username);
+
+        // Set the login status
+        document.getElementById('login-status').innerText = 'You are logged in.';
+    } else {
+        alert('Invalid username or password'); // Replace with your logic for failed login
+    }
+}
+
+// Attach the event listener to the login form
+loginForm.addEventListener('submit', handleLoginFormSubmission);
+
+
+</script>
+</html>

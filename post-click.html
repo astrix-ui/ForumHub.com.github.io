@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Topic</title>
+    <link rel="stylesheet" href="post-click.css">
+</head>
+<body>
+    <div id="toast" class="toast">
+        <p>Nigga you sure you wanna delete??</p>
+  <button id="yesButton">Yes</button>
+  <button id="noButton">No</button>
+    </div>
+    <div id="commentToast" class="toast">
+        <p>Your comment is deleted.</p>
+        <button id="commentYesButton">OK</button>
+    </div>
+    
+
+    <nav class="navbar grid">
+        <h1 id="logo">ForumHub.com</h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="profile.html"><span id="usernameContainer"></span></a></li>
+            <li id="loginContainer"><a href="login.html" class="login-btn">Login</a></li>
+        </ul>
+    </nav>
+    <section class="goback">
+        <a href="index.html" id="back-btn">&lt; Go Back</a>
+    </section>
+
+    <section class="container">
+        <div class="heading">
+            <div class="delete">
+                <img src="assets/delete.png" alt="">
+            </div>
+            <h1>Discover what koalas eat</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde asperiores blanditiis, aspernatur odio, fugiat dignissimos, a sequi aut provident natus accusamus. Debitis ratione blanditiis consequuntur explicabo quas consequatur in eligendi laboriosam quibusdam repellat corporis natus est, provident aperiam sit sed velit nisi! Doloremque velit eius ullam quas maiores nostrum fugit sequi deserunt blanditiis, voluptatem similique eos beatae laborum rem earum?</p>
+        </div>
+    </section>
+
+    <section class="comment-container">
+        <div class="title">
+            <h2>Comments</h2>
+            <hr>
+        </div>
+        <div class="add-comment">
+            <form>                
+                <textarea id="textinput" required placeholder="Enter Text" onkeyup="textAreaAdjust(this)" style="overflow:hidden"></textarea>
+                <br>
+                <button type="submit">Comment</button>
+            </form>
+        </div>
+        <div class="comment-box">
+            <h3>User-name</h3>
+            <p>Lmao this is fire!!! The CSS Developer is the king of the world <333333</p>
+            <img src="./assets/delete.png" alt="" width="20px" id="commentdelete">
+            <a href="#" onclick="Reply()" id="reply-btn">Reply</a>
+            <div class="reply-container">
+            <textarea id="textinput" required placeholder="Enter Text" onkeyup="textAreaAdjust(this)" style="overflow:hidden"></textarea>
+                <br>
+                <button type="submit" id="sub">Reply</button>
+                </div>
+        </div>
+        
+
+    </section>
+    <footer>
+        <h4>Copyright 2023 Ayush Sharma & Aditya Dev Chand</h4>
+    </footer>
+    <script>
+        // RESIZE TEXT AREA --DO NOT DELETE--
+function textAreaAdjust(element) {
+  element.style.height = "1px";
+  element.style.height = (25+element.scrollHeight)+"px";
+}
+const textinput = document.getElementById('textinput');
+const sub = document.getElementById('sub');
+const reply = document.getElementById('reply-btn');
+function Reply() {
+  const replyContainers = document.querySelectorAll('.reply-container');
+  
+  // Loop through all reply containers and set their display to "block"
+  replyContainers.forEach(function (container) {
+    container.style.display = "block";
+    reply.style.display = "none";
+  });
+}
+const deleteButton = document.querySelector('.delete img');
+const toast = document.getElementById('toast');
+const yesButton = document.getElementById('yesButton');
+const noButton = document.getElementById('noButton');
+
+deleteButton.addEventListener('click', function () {
+  // Show the toast message
+  toast.style.display = 'block';
+  
+  // Hide the toast message when either "Yes" or "No" button is clicked
+  yesButton.addEventListener('click', function () {
+    toast.style.display = 'none';
+    // Perform the "Yes" action here if needed
+  });
+
+  noButton.addEventListener('click', function () {
+    toast.style.display = 'none';
+    // Perform the "No" action here if needed
+  });
+});
+const commentDeleteButton = document.getElementById('commentdelete');
+const commentToast = document.getElementById('commentToast');
+const commentYesButton = document.getElementById('commentYesButton');
+
+commentDeleteButton.addEventListener('click', function () {
+  // Show the comment delete toast message
+  commentToast.style.display = 'block';
+  
+  // Hide the comment delete toast message when the "OK" button is clicked
+  commentYesButton.addEventListener('click', function () {
+    commentToast.style.display = 'none';
+    // Perform any additional actions needed after deleting the comment
+  });
+});
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,346 @@
+:root{
+    --primary: black;
+    --primary-blue: rgb(11, 0, 39);
+    --secondary: rgb(30, 30, 30);
+    --secondary-gold: rgb(66, 58, 0);
+}
+textarea::placeholder{
+    color: aliceblue;
+}
+textarea{
+    color: white;
+}
+body{
+    word-wrap: break-word;
+    box-sizing: border-box;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-color: var(--secondary);
+    font-family:'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+.comment-box a{
+    color: white;
+    background-color: gray;
+    padding: 5px 20px;
+    /* margin: 0px 10px; */
+    border-radius: 20px;
+    border: none;
+    transition: 0.2s ease-in-out;
+}
+.comment-box a:hover{
+    background-color: azure;
+    color: black;
+}
+#sub:hover{
+    background-color: azure;
+    color: black;
+}
+.reply-container button{
+    cursor: pointer;
+    background-color: gray;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 20px;
+    border: none;
+    transition: 0.2s ease-in-out;   
+}
+.toast {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: #fff;
+    padding: 20px 20px;
+    border-radius: 5px;
+    animation: slideIn 0.5s, fadeOut 0.5s 4s;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  .toast button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #4f4f4f;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .toast button:last-child {
+    margin-right: 0;
+  }
+  
+.reply-container{
+    display: none;
+}
+a{
+    text-decoration: none;
+    color: aliceblue;
+}
+li{
+    list-style: none;
+}
+
+.navbar a:hover{
+    color: red;
+    text-shadow: 0px 0px 10px  white;    
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    grid-gap: 10px;
+}
+
+#logo{
+    padding: 0px 0px;
+    grid-column: 1/9;
+    text-align: center;
+}
+.navbar{
+    background-color: black;
+    color: aliceblue;
+    box-shadow: 0px 0px 10px black;
+}
+
+.navbar ul{
+    display: none;
+    justify-content: flex-end;
+    grid-column: 6/9;
+    padding: 0px 70px;
+    align-self: center;
+}
+.navbar li{
+    padding:  10px;
+}
+#back-btn{
+    position: absolute;
+    top: 80px;
+    left: 10px;
+    background-color: red;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: 0.3s ease-in-out;
+}
+#back-btn:hover{
+    background-color:rgba(255, 255, 255, 0.41);
+    color: black;
+    box-shadow: 0px 0px 20px white;
+}
+.container{
+    background-color: var(--primary);
+    margin: 30px auto;
+    margin-top: 70px;
+    padding: 20px 15px;
+    border-radius: 20px;
+    padding-top: 1px;
+    width: 90%;
+    align-items: center;
+    height: 100%;
+}
+.container h1{
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+.container p{
+    font-size: 1.2em;
+}
+.comment-container{
+    background-color: var(--primary);
+    margin:  auto;
+    padding: 20px 15px;
+    border-radius: 20px;
+    padding-top: 1px;
+    width: 90%;
+    align-items: center;
+    height: 100%;
+    margin-bottom: 20px;
+}
+.add-comment{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-self: center;
+    margin: auto;
+}
+.add-comment button{
+    background-color: aliceblue;
+    color: black;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 20px;
+    border: none;
+    transition: 0.2s ease-in-out;
+}
+.add-comment button:hover{
+    background-color: red;
+}
+textarea{
+    background-color: rgba(240, 248, 255, 0.226);
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    border-radius: 10px;
+    resize:unset;
+    width: 90%;
+    align-items: center;
+    align-self: center;
+  padding: 7px 20px;
+  margin: 10px auto;
+  box-sizing: border-box;
+}
+.title {
+    margin-bottom: 0px;
+    font-size: 1.2em;
+}
+hr{
+    margin-top: 0px;
+    border: 1px solid var(--secondary);
+  border-radius: 5px;
+}
+.comment-box{
+    border: 1px solid var(--secondary);
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: var(--secondary);
+}
+.comment-box h3{
+    font-size: 1.5em;
+}
+footer{
+    text-align: center;
+    background-color: var(--primary);
+    padding: 10px;
+    margin: 10px 10px 0px 10px;
+    border-radius: 20px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    letter-spacing: 2px;
+}
+footer h4{
+    font-size: 0.8em;
+}
+
+
+    .delete img{
+        width: 20px;
+        float: right;
+        filter: invert();
+        margin-top: 15px;
+        cursor: pointer;
+        padding: 10px;
+        margin-right: 10px;
+        transition: 0.3s ease-in-out;
+        transition-delay: 0.2s;
+        border-radius: 100%;
+        border: 0px solid red;
+    }
+    .delete img:hover{
+        box-shadow: 0px 0px 10px black;
+        transform: scale(1.2);
+    }
+@media screen and (min-width: 1000px) {
+
+    .navbar {
+        position: fixed;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-radius: 10px;
+        top: 5px;
+        margin-left:3px ;
+        margin-right: 5px;
+        box-shadow: 0px 0px 10px 10px black;
+        left: 0;
+        height: fit-content;
+        right: 0;
+        z-index: 9999;
+    }
+    #logo{
+        grid-column: 1/6;
+        text-align: left;
+        padding: 0px 40px;
+    }
+    .navbar ul{
+        display: flex;
+        align-items: center; 
+        margin: 0px;
+        height: 10px;
+
+    }
+    .container{
+        margin-top: 150px;
+        padding: 20px 20px;
+    }
+    .comment-container{
+        padding: 20px;
+    }
+    .title{
+        margin-bottom: 20px;
+    }
+    #back-btn{
+        top: 90px;
+    }
+
+}
+@media screen and (max-width:350px) {
+    #logo{
+        font-size: 1.0em;
+        grid-column: 1/9;
+        text-align: center;
+        align-items: center;
+        align-self: center;
+    }
+    .heading h1{
+        font-size: 2em;
+    }
+    .delete img{
+        margin: 0px;
+    }
+    .heading p{
+        font-size: 1em;
+    }
+    footer{
+        grid-column: 1/9;
+        text-align: center;
+    }
+    .title{margin-bottom: 0px;}
+    .comment-container{
+        padding:5px 5px;
+    }
+    .comment-container h2{
+        text-align: center;
+    }
+    .container{
+        padding: 20px 5px;
+        margin-top: 70px;
+    }
+    #back-btn{
+        padding: 3px 8px;
+        top: 65px
+    }
+}
+
